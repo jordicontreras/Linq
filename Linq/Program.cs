@@ -23,6 +23,34 @@ namespace Linq
                 Console.WriteLine(val);
             }
 
+
+            //********** FASE 2 **********
+            Console.WriteLine("********** FASE 2 **********");
+
+            //Obtenemos la nota máxima
+            var maxMark =
+            (from num in evenNumsQuery
+            select num).Max();
+
+            Console.WriteLine("la nota más alta de los valores pares es: " + maxMark);
+
+
+            //Obtenemos la nota mmínima
+            var minMark =
+            (from num in evenNumsQuery
+            select num).Min();
+
+            Console.WriteLine("la nota más baja de los valores pares es: " + minMark);
+
+
+            //Obtenemos la nota media
+            var averageMark =
+            (from num in evenNumsQuery
+            select num).Average();
+
+            Console.WriteLine("la nota más baja de los valores pares es: " + averageMark);
+
+
         }
     }
 }
