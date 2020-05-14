@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace Linq
@@ -25,6 +26,7 @@ namespace Linq
 
 
             //********** FASE 2 **********
+            Console.WriteLine("");
             Console.WriteLine("********** FASE 2 **********");
 
             //Obtenemos la nota máxima
@@ -50,6 +52,37 @@ namespace Linq
 
             Console.WriteLine("la nota más baja de los valores pares es: " + averageMark);
 
+
+            //********** FASE 3 **********
+            Console.WriteLine("");
+            Console.WriteLine("********** FASE 3 **********");
+
+            //Obtenemos los valores por debajo de 5
+            var underFive =
+            from num in evenNumsQuery
+            where num < 5
+            select num;
+
+            Console.WriteLine("Los valores por debajo de 5 son:");
+
+            foreach(int val in underFive)
+            {
+                Console.WriteLine(val);
+            }
+
+
+            //Obtenemos los valores por encima de 5
+            var overFive =
+            from num in evenNumsQuery
+            where num > 5
+            select num;
+
+            Console.WriteLine("Los valores por encima de 5 son:");
+
+            foreach (int val in overFive)
+            {
+                Console.WriteLine(val);
+            }
 
         }
     }
