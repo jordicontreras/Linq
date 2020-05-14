@@ -10,6 +10,8 @@ namespace Linq
         {
             //********** FASE 1 **********
             Console.WriteLine("********** FASE 1 **********");
+
+            //Creamos e inicializamos el array de números
             int[] arrayNumbers = new int[15] { 2, 6, 8, 4, 5, 5, 9, 2, 1, 8, 7, 5, 9, 6, 4 };
             
             //Realizamos la query forzando la ejecución para que guarde en un array
@@ -80,6 +82,55 @@ namespace Linq
             Console.WriteLine("Los valores por encima de 5 son:");
 
             foreach (int val in overFive)
+            {
+                Console.WriteLine(val);
+            }
+
+
+            //********** FASE 4 **********
+            Console.WriteLine("");
+            Console.WriteLine("********** FASE 4 **********");
+
+            //Creamos e inicializamos el array de nombres
+            string[] arrayNames = new string[7] {"David", "Sergio", "Maria", "Laura", "Oscar", "Julia", "Oriol" };
+
+            //Obtenemos los nombres que empiezan por "O"
+            var startsWithO =
+            from name in arrayNames
+            where name.StartsWith("O")
+            select name;
+
+            Console.WriteLine("Los nombres que empiezan por 'O' son:");
+
+            foreach (string val in startsWithO)
+            {
+                Console.WriteLine(val);
+            }
+
+            //Obtenemos los nombres que tienen más de 6 letras
+            var over6Letters =
+            from name in arrayNames
+            where (name.Length > 6)
+            select name;
+
+            Console.WriteLine("Los nombres que tienen más de 6 letras son:");
+
+            //No devuelve nada porque todos los nombres tienen máximo 6 letras
+            foreach (string val in over6Letters)
+            {
+                Console.WriteLine(val);
+            }
+
+
+            //Obtenemos los nombres ordenados descendentemente
+            var namesDesc =
+            from name in arrayNames
+            orderby name descending
+            select name;
+
+            Console.WriteLine("Los nombres ordenados descendentemente son:");
+
+            foreach (string val in namesDesc)
             {
                 Console.WriteLine(val);
             }
